@@ -534,6 +534,22 @@ section {
 
 /* Responsive */
 
+@media (max-width: 480px) {
+    .modal-content {
+        margin: 2% auto;
+        padding: 1rem;
+        max-width: 98vw;
+        max-height: 95vh;
+        overflow-y: auto;
+    }
+    .carousel img {
+        width: 100%;
+        height: auto;
+        max-width: 320px;
+        max-height: 180px;
+    }
+}
+
 .hamburger {
     display: none;
     justify-content: flex-end;
@@ -560,6 +576,8 @@ section {
     }
     .nav-links.active {
         display: flex;
+        border: 2px solid var(--color-light-brown);
+        border-radius: 10px;
     }
     .hamburger {
         display: block;
@@ -589,6 +607,23 @@ section {
     .about-text {
         margin: 0 0 2rem 0;
         font-size: 1rem;
+    }
+    
+    /* permitir el wrap para que si no caben los botones en una fila, se vayan a la siguiente */
+
+    .links-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+        padding: 0 0.5rem;
+    }
+    .social-btn {
+        flex: 1 1 120px;
+        min-width: 120px;
+        max-width: 100%;
+        margin-bottom: 0.5rem;
+        text-align: center;
     }
 }
 
