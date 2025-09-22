@@ -6,6 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const imgEl   = document.getElementById("carousel-image");
   const prevBtn = modal.querySelector(".prev");
   const nextBtn = modal.querySelector(".next");
+  
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+
+  // Listener para el desplegable del menú en móvil
+  hamburger.addEventListener('click', function() {
+      navLinks.classList.toggle('active');
+  });
 
   let images = [];
   let currentIndex = 0;
