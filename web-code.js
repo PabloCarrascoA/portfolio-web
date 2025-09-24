@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("expModal");
   const closeBtn = modal.querySelector(".modal-close");
-  const titleEl = document.getElementById("modal-title");
-  const descEl = document.getElementById("modal-description");
-  const imgEl   = document.getElementById("carousel-image");
+  const title = document.getElementById("modal-title");
+  const desc = document.getElementById("modal-description");
+  const img   = document.getElementById("carousel-image");
   const prevBtn = modal.querySelector(".prev");
   const nextBtn = modal.querySelector(".next");
   
@@ -12,22 +12,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // Listener para el desplegable del menú en móvil
+
   hamburger.addEventListener('click', function() {
       navLinks.classList.toggle('active');
   });
+
+  // Parte de la ventana emergente de los experience-card
 
   let images = [];
   let currentIndex = 0;
 
   function showImage(index) {
-    imgEl.src = images[index];
+    img.src = images[index];
   }
 
-  document.querySelectorAll(".experience-card").forEach(card => {
+  document.querySelectorAll(".experience-card, .project-card, .education-item").forEach(card => {
     card.addEventListener("click", () => {
-      // Rellena datos
-      titleEl.textContent = card.dataset.title;
-      descEl.innerHTML  = card.dataset.description;
+
+      if (card.dataset.title === 'i2Planet Course') {
+        document.querySelector(".modal-content").style.margin = "1% auto";
+      } else {
+        document.querySelector(".modal-content").style.margin = "5% auto";
+      }
+      
+      title.textContent = card.dataset.title;
+      desc.innerHTML  = card.dataset.description;
       images = JSON.parse(card.dataset.images);
       currentIndex = 0;
       showImage(currentIndex);

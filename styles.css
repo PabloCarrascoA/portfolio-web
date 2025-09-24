@@ -223,6 +223,8 @@ section {
 /* Skills */
 .skills-section {
     background-color: var(--color-beige);
+    display: flex;
+    justify-content: center;
 }
 
 .skills-grid {
@@ -233,9 +235,15 @@ section {
     margin: 0 auto;
 }
 
+.skills-grid > .skill-category:nth-child(3) {
+    grid-column: 1 / span 2;
+    justify-self: center;
+}
+
 .skill-category {
     text-align: center;
 }
+
 
 .category-title {
     font-family: var(--font-title);
@@ -396,6 +404,12 @@ section {
     border-radius: 15px;
     border-left: 4px solid var(--color-light-brown);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 .degree {
