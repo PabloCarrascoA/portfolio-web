@@ -34,7 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         document.querySelector(".modal-content").style.margin = "5% auto";
       }
-      
+
+      if (images.length === 0) {
+        img.style.display = "none";
+        prevBtn.style.display = "none";
+        nextBtn.style.display = "none";
+      } else {
+        img.style.display = "block";
+        prevBtn.style.display = "block";
+        nextBtn.style.display = "block";
+      }
+
       title.textContent = card.dataset.title;
       desc.innerHTML  = card.dataset.description;
       images = JSON.parse(card.dataset.images);
